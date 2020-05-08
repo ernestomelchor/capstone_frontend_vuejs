@@ -10,7 +10,7 @@
 export default {
   data: function() {
     return {
-      message: "Welcome to the SoccerApp!",
+      message: "The Beautiful Game!",
     };
   },
   created: function() {},
