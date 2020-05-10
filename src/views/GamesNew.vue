@@ -5,10 +5,14 @@
       <ul>
         <li v-for="error in errors">{{ error }}</li>
       </ul>
-      Where:
-      <input type="list" v-model="newFieldId" />
-      When:
-      <input type="text" v-model="newDateTime" />
+      <div>
+        Full Soccer Field Address:
+        <input type="number" v-model="newFieldId" />
+      </div>
+      <div>
+        Date and Time:
+        <input type="datetime-local" v-model="newDateTime" />
+      </div>
       <input type="submit" value="Create" />
     </form>
   </div>
@@ -22,8 +26,7 @@ export default {
     return {
       newFieldId: "",
       newDateTime: "",
-      newPhotoHeight: "",
-      errors: [],
+      errors: []
     };
   },
   created: function() {},
@@ -31,18 +34,18 @@ export default {
     createGame: function() {
       var params = {
         field_id: this.newFieldId,
-        date_time: this.newDateTime,
+        date_time: this.newDateTime
       };
       axios
         .post("/api/games", params)
-        .then((response) => {
+        .then(response => {
           this.$router.push("/games");
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
-    },
-  },
+    }
+  }
 };
 </script>
