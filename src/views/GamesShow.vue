@@ -14,13 +14,10 @@
       <b>Address:</b>
       {{ game.field.address }}
     </p>
-    <p>
-      <b>Players Attending:</b>
-      <div v-for="player in game.players_attending">
-        {{ player.name }}
-      </div>
-
-    </p>
+    <b>Players Attending:</b>
+    <div v-for="player in game.players_attending">
+      <p>{{ player.name }}</p>
+    </div>
     <router-link to="/games">Back to All Games</router-link>
   </div>
 </template>
