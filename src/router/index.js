@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import GamesIndex from "../views/GamesIndex.vue";
 import GamesNew from "../views/GamesNew.vue";
+import GamesShow from "../views/GamesShow.vue";
 import About from "../views/About.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
@@ -35,6 +36,11 @@ const routes = [
     path: "/games/new",
     name: "games-new",
     component: GamesNew,
+  },
+  {
+    path: "/games/:id",
+    name: "/games-show",
+    component: GamesShow,
   },
   {
     path: "/signup",

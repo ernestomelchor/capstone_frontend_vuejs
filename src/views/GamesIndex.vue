@@ -21,7 +21,9 @@
       </p>
       <!-- Insert Buttons Here -->
       <div>
-        <button>See More Info</button>
+        <button>
+          <router-link v-bind:to="`/games/${game.id}`">See More Info</router-link>
+        </button>
       </div>
       <br />
       <div>
