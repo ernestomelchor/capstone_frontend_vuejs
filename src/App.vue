@@ -19,7 +19,8 @@ li {
   color: red;
 }
 img {
-  max-width: 100%;
+  width: 75vh;
+  max-height: 75vh;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

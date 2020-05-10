@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
+  <div class="games-show">
     <img v-bind:src="game.field.image_url" alt="Picture of Soccer Field" />
+    <br />
+    <button>Join Game</button>
     <br />
     <p>
       <b>When:</b>

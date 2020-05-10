@@ -27,7 +27,8 @@
       </div>
       <br />
       <div>
-        <button>Join Game</button>
+        <button v-if="!game.attending" v-on:click="createPlayerGame(game)">Join Game</button>
+        <p v-if="game.attending">Attending!</p>
       </div>
       <br />
     </div>
@@ -43,7 +44,8 @@ export default {
   data: function() {
     return {
       message: "Come Join a Game!",
-      games: []
+      games: [],
+      newPlayerGame: ""
     };
   },
   created: function() {
@@ -52,6 +54,15 @@ export default {
       this.games = response.data;
     });
   },
-  methods: {}
+  methods: {
+    createPlayerGame: function(game) {
+      var params = {
+        game_id: game.id
+      };
+      axios.post("/api/player_games", params).then(response => {
+        game.attending = true;
+      });
+    }
+  }
 };
 </script>
