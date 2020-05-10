@@ -22,6 +22,22 @@
           <label>Password confirmation:</label>
           <input type="password" class="form-control" v-model="passwordConfirmation" />
         </div>
+        <div class="form-group">
+          <label>Home Address:</label>
+          <input type="text" class="form-control" v-model="address" />
+        </div>
+        <div class="form-group">
+          <label>Preferred Position:</label>
+          <input type="text" class="form-control" v-model="position" />
+        </div>
+        <div class="form-group">
+          <label>Birthday:</label>
+          <input type="date" class="form-control" v-model="dob" />
+        </div>
+        <div class="form-group">
+          <label>Level(recreational or competitive only):</label>
+          <input type="text" class="form-control" v-model="level" />
+        </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
@@ -38,6 +54,10 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
+      address: "",
+      position: "",
+      dob: "",
+      level: "",
       errors: []
     };
   },
@@ -47,7 +67,11 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password_confirmation: this.passwordConfirmation,
+        address: this.address,
+        position: this.position,
+        dob: this.dob,
+        level: this.level
       };
       axios
         .post("/api/players", params)
