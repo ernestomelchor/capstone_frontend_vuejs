@@ -4,16 +4,17 @@
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
 
 <script>
 export default {
   data: function() {
     return {
-      message: "Welcome to the SoccerApp!",
+      message: "Welcome to the SoccerApp!"
     };
   },
   created: function() {},
-  methods: {},
+  methods: {}
 };
 </script>

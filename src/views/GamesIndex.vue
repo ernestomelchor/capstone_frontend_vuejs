@@ -21,8 +21,13 @@
       </p>
       <!-- Insert a Join Button Here -->
       <div>
-        <button>Show Up to This Game</button>
+        <button>See More Game Info</button>
       </div>
+      <br />
+      <div>
+        <button>Join Game</button>
+      </div>
+      <br />
     </div>
   </div>
 </template>
@@ -35,12 +40,13 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "The Beautiful Game!",
+      message: "Come Play!",
       games: []
     };
   },
   created: function() {
     axios.get("/api/games").then(response => {
+      console.log("All Games:", response.data);
       this.games = response.data;
     });
   },
