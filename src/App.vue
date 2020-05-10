@@ -10,17 +10,6 @@
 </template>
 
 <style>
-body {
-  background-image: url("./views/images/soccer_ball.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-h1,
-h4,
-p {
-  color: aliceblue;
-}
 img {
   max-width: 100%;
 }
