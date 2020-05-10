@@ -19,7 +19,7 @@
         <b>Number of People Attending So Far:</b>
         {{ game.players_attending }}
       </p>
-      <!-- Insert a Join Button Here -->
+      <!-- Insert Buttons Here -->
       <div>
         <button>See More Game Info</button>
       </div>
