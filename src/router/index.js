@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import GamesIndex from "../views/GamesIndex.vue";
+import GamesNew from "../views/GamesNew.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
     path: "/games",
     name: "games-index",
     component: GamesIndex,
+  },
+  {
+    path: "/games/new",
+    name: "games-new",
+    component: GamesNew,
   },
 ];
 

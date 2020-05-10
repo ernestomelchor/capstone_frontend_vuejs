@@ -21,7 +21,7 @@
       </p>
       <!-- Insert Buttons Here -->
       <div>
-        <button>See More Game Info</button>
+        <button>See More Info</button>
       </div>
       <br />
       <div>
@@ -40,7 +40,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Come Play!",
+      message: "Come Join a Game!",
       games: []
     };
   },
