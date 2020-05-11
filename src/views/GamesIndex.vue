@@ -27,8 +27,8 @@
       </div>
       <br />
       <div>
-        <button v-if="!game.attending" v-on:click="createPlayerGame(game)">Join Game</button>
-        <p v-if="game.attending">Attending!</p>
+        <button v-if="!game.attending" v-on:click="createPlayerGame(game)">Attend Game</button>
+        <button v-if="game.attending">Cancel Attendance</button>
       </div>
       <br />
     </div>
