@@ -44,8 +44,7 @@ export default {
   data: function() {
     return {
       message: "Come Join a Game!",
-      games: [],
-      newPlayerGame: ""
+      games: []
     };
   },
   created: function() {
