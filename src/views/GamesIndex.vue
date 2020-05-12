@@ -70,7 +70,7 @@ export default {
     },
     destroyPlayerGame: function(game) {
       var params = {
-        game_id: game.id
+        player_game_id: game.id
       };
       axios.delete("/api/player_games/" + game.id).then(response => {
         game.attending = false;
