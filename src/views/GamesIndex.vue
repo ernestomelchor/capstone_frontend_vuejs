@@ -2,6 +2,10 @@
   <div class="games-index">
     <h1>{{ message }}</h1>
     <div v-for="game in games">
+      <!-- I need to get the player_game_id so I can enter it as a parameter for the destroyPlayerGame(game) action, that's what I'm trying to do below -->
+      <!-- <div v-for="player in game.player_games">
+        <b>Player's ID and PlayerGame associated with this game: {{ player }}</b>
+      </div>-->
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
         <b>When:</b>

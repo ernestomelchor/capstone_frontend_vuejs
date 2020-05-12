@@ -2,7 +2,9 @@
   <div class="games-show">
     <img v-bind:src="game.field.image_url" alt="Picture of Soccer Field" />
     <br />
-    <button>Join Game</button>
+    <button>
+      <b>Join Game</b>
+    </button>
     <br />
     <h3>
       <b>When:</b>
