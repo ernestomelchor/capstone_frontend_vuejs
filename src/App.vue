@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
 <template>
   <div id="app">
     <div id="nav">
@@ -14,20 +15,26 @@
 </template>
 
 <style>
+html {
+  background: url("./views/images/full_soccer_field.jpg") no-repeat center
+    center fixed;
+  background-size: cover;
+  height: 100%;
+}
 li {
   list-style: none;
   color: red;
 }
 img {
-  width: 75vh;
+  width: 50%;
   max-height: 75vh;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f7f7f7;
 }
 
 #nav {
@@ -36,10 +43,10 @@ img {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #f7f7f7;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #f7f7f7;
 }
 </style>
