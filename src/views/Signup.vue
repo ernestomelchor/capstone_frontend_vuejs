@@ -7,35 +7,51 @@
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>Name:</label>
+          <label>
+            <b>Name:</b>
+          </label>
           <input type="text" class="form-control" v-model="name" />
         </div>
         <div class="form-group">
-          <label>Email:</label>
+          <label>
+            <b>Email:</b>
+          </label>
           <input type="email" class="form-control" v-model="email" />
         </div>
         <div class="form-group">
-          <label>Password:</label>
+          <label>
+            <b>Password:</b>
+          </label>
           <input type="password" class="form-control" v-model="password" />
         </div>
         <div class="form-group">
-          <label>Password confirmation:</label>
+          <label>
+            <b>Confirm Password:</b>
+          </label>
           <input type="password" class="form-control" v-model="passwordConfirmation" />
         </div>
         <div class="form-group">
-          <label>Home Address:</label>
+          <label>
+            <b>Home Address:</b>
+          </label>
           <input type="text" class="form-control" v-model="address" />
         </div>
         <div class="form-group">
-          <label>Preferred Position:</label>
+          <label>
+            <b>Preferred Position:</b>
+          </label>
           <input type="text" class="form-control" v-model="position" />
         </div>
         <div class="form-group">
-          <label>Birthday:</label>
+          <label>
+            <b>Birthday:</b>
+          </label>
           <input type="date" class="form-control" v-model="dob" />
         </div>
         <div class="form-group">
-          <label>Level(recreational or competitive only):</label>
+          <label>
+            <b>Level (recreational or competitive only):</b>
+          </label>
           <input type="text" class="form-control" v-model="level" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />

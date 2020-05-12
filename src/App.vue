@@ -16,8 +16,8 @@
 
 <style>
 html {
-  background: url("./views/images/full_soccer_field.jpg") no-repeat center
-    center fixed;
+  background: url("./views/images/soccer_field.jpeg") no-repeat center center
+    fixed;
   background-size: cover;
   height: 100%;
 }

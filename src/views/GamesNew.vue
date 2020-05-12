@@ -6,13 +6,13 @@
         <li v-for="error in errors">{{ error }}</li>
       </ul>
       <div>
-        Soccer Field:
+        <b>Soccer Field:</b>
         <select v-model="newFieldId">
           <option v-for="field in fields" v-bind:value="field.id" :key="field.id">{{ field.name }}</option>
         </select>
       </div>
       <div>
-        Date and Time:
+        <b>Date and Time:</b>
         <input type="datetime-local" v-model="newDateTime" />
       </div>
       <input type="submit" value="Create" />

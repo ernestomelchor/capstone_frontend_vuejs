@@ -4,23 +4,25 @@
     <br />
     <button>Join Game</button>
     <br />
-    <p>
+    <h3>
       <b>When:</b>
       {{ game.scheduled }}
-    </p>
-    <p>
+    </h3>
+    <h3>
       <b>Where:</b>
       {{ game.field.name }}
-    </p>
-    <p>
+    </h3>
+    <h3>
       <b>Address:</b>
       {{ game.field.address }}
-    </p>
+    </h3>
     <b>Players Attending:</b>
     <div v-for="player in game.players_attending" :key="player.id">
-      <p>{{ player.name }}</p>
+      <h3>{{ player.name }}</h3>
     </div>
-    <router-link to="/games">Back to All Games</router-link>
+    <router-link to="/games">
+      <b>Back to All Games</b>
+    </router-link>
   </div>
 </template>
 
