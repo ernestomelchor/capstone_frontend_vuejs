@@ -28,7 +28,8 @@
       <br />
       <div>
         <button v-if="!game.attending" v-on:click="createPlayerGame(game)">Attend Game</button>
-        <button v-if="game.attending">Cancel Attendance</button>
+        <!-- This button below does not work because I am giving it a game.id instead of a player_game.id which I don't know how to access at this time -->
+        <button v-if="game.attending" v-on:click="destroyPlayerGame(game)">Cancel Attendance</button>
       </div>
       <br />
     </div>
@@ -60,6 +61,19 @@ export default {
       };
       axios.post("/api/player_games", params).then(response => {
         game.attending = true;
+        this.games.forEach(function(game) {
+          if (game.id === params.game_id) {
+            game.players_attending++;
+          }
+        });
+      });
+    },
+    destroyPlayerGame: function(game) {
+      var params = {
+        game_id: game.id
+      };
+      axios.delete("/api/player_games/" + game.id).then(response => {
+        game.attending = false;
       });
     }
   }
