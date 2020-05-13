@@ -72,7 +72,8 @@ export default {
         game.attending = false;
         this.games.forEach(function(game) {
           if (game.id === params.game_id) {
-            // game.players_attending--;
+            game.players_attending--;
+            location.refresh("/api/games");
           }
         });
       });
