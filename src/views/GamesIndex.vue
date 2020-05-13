@@ -3,8 +3,8 @@
     <h1>{{ message }}</h1>
     <div v-for="game in games">
       <!-- I need to get the player_game_id so I can enter it as a parameter for the destroyPlayerGame(game) action, that's what I'm trying to do below -->
-      <!-- <div v-for="player in game.player_games">
-        <b>Player's ID and PlayerGame associated with this game: {{ player }}</b>
+      <div v-for="player in game.player_games">
+        <b>{{ player.player_game_id }}</b>
       </div>-->
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
@@ -23,7 +23,7 @@
         <b>Number of People Attending So Far:</b>
         {{ game.players_attending }}
       </h3>
-      <!-- Insert Buttons Here -->
+      <!-- Insert Buttons Here-->
       <div>
         <button>
           <router-link v-bind:to="`/games/${game.id}`">
@@ -69,14 +69,17 @@ export default {
       var params = {
         game_id: game.id
       };
-      axios.post("/api/player_games", params).then(response => {
-        game.attending = true;
-        this.games.forEach(function(game) {
-          if (game.id === params.game_id) {
-            game.players_attending++;
-          }
-        });
-      });
+      axios
+        .post("/api/player_games", params)
+        .then(response => {
+          game.attending = true;
+          this.games.forEach(function(game) {
+            if (game.id === params.game_id) {
+              game.players_attending++;
+            }
+          });
+        })
+        .catch(errors => console.log(errors.response.data));
     },
     destroyPlayerGame: function(game) {
       var params = {
@@ -84,6 +87,11 @@ export default {
       };
       axios.delete("/api/player_games/" + game.id).then(response => {
         game.attending = false;
+        this.games.forEach(function(game) {
+          if (game.id === params.game_id) {
+            game.players_attending--;
+          }
+        });
       });
     }
   }

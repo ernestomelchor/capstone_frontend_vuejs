@@ -8,7 +8,7 @@
         </ul>
         <div class="form-group">
           <label>
-            <b>email:</b>
+            <b>Email:</b>
           </label>
           <input type="email" class="form-control" v-model="email" />
         </div>
