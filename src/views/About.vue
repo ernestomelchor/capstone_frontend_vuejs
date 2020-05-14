@@ -1,17 +1,20 @@
 <template>
   <div class="about">
-    <h3>
-      We at SoccerApp are all about conecting you to soccer players in your area
-      and making sure you have a good time.
-    </h3>
-    <h3>
-      Check out local games, attend, or
-      schedule your own!
-    </h3>
-    <h3>
-      Please practice good sportsmanship and community
-      building.
-    </h3>
-    <h3>Enjoy the beautiful game!</h3>
+    <!-- About Section Content-->
+    <div class="row">
+      <div class="col-lg-4 ml-auto">
+        <p class="lead">
+          We at Soccer App are all about conecting you to soccer games in your area
+          and making sure you have a good time. Check out all games, attend, or
+          schedule your own!
+        </p>
+      </div>
+      <div class="col-lg-4 mr-auto">
+        <p class="lead">
+          Please practice good sportsmanship and community
+          building throughout. Enjoy the beautiful game!
+        </p>
+      </div>
+    </div>
   </div>
 </template>

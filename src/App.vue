@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
 <template>
   <div id="app">
     <!-- <div id="nav">
@@ -36,15 +35,26 @@
               >All Games</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/games/new"
+              >Create a Game</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Signup</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Added these div with 5 breaks for a quick fix  -->
     <div>
       <br />
       <br />
@@ -52,6 +62,7 @@
       <br />
       <br />
     </div>
+
     <router-view />
 
     <!-- Footer-->
@@ -99,7 +110,7 @@
           <div class="col-lg-4">
             <h4 class="text-uppercase mb-4">About Founder</h4>
             <p class="lead mb-0">
-              Ernesto is a pragmatic software engineer with a growth mindset and a team-based mentality. When he's not creating, he is outside playing soccer!
+              When Ernesto is not playing soccer, he is messing around with Boostrap themes!
               <a
                 href="http://startbootstrap.com"
               >Start Bootstrap</a>.
@@ -108,6 +119,20 @@
         </div>
       </div>
     </footer>
+
+    <!-- Copyright Section-->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright © Soccer App 2020</small>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="/">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
   </div>
 </template>
 

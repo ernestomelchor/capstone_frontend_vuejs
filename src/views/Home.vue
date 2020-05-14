@@ -29,8 +29,8 @@
 export default {
   data: function() {
     return {
-      message: "Soccer App",
-      subTitle: "Welcome to the beautiful game!"
+      message: "Soccer App!",
+      subTitle: "Welcome to the beautiful game"
     };
   },
   created: function() {},
