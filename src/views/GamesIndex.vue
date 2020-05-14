@@ -19,7 +19,7 @@
         {{ game.field.address }}
       </h3>
       <h3>
-        <b>Number of People Attending So Far:</b>
+        <b>Current Total Attending:</b>
         {{ game.players_attending }}
       </h3>
       <!-- Insert Buttons Here-->

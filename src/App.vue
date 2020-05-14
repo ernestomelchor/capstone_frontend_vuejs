@@ -32,7 +32,7 @@
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="/games"
-              >All Games</a>
+              >See All Games</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a
@@ -44,18 +44,22 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Signup</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Signup</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/logout">Logout</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Added these div with 5 breaks for a quick fix  -->
+    <!-- Added this div with 5 breaks for a quick fix  -->
     <div>
+      <br />
       <br />
       <br />
       <br />
@@ -65,6 +69,11 @@
 
     <router-view />
 
+    <!-- Added this div with 1 break for a quick fix  -->
+    <div>
+      <br />
+      <br />
+    </div>
     <!-- Footer-->
     <footer class="footer text-center">
       <div class="container">
