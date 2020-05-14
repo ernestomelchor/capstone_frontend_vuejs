@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/games">All Games</router-link>|
       <router-link to="/games/new">Create Game</router-link>|
@@ -9,44 +9,115 @@
       <router-link to="/signup">Signup</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/logout">Logout</router-link>
+    </div>-->
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">Home</a>
+        <button
+          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/games"
+              >All Games</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
     <router-view />
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Location-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Headquarters</h4>
+            <p class="lead mb-0">
+              Chicago, IL 60645
+              <br />USA
+            </p>
+          </div>
+          <!-- Footer Social Icons-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Social Media</h4>
+
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://www.linkedin.com/in/ernestomelchor/"
+            >
+              <i class="fab fa-fw fa-linkedin-in"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://github.com/ernestomelchor"
+            >
+              <i class="fab fa-fw fa-github"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://twitter.com/ernestomelchor_"
+            >
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://www.instagram.com/ernestomelchor88/"
+            >
+              <i class="fab fa-fw fa-instagram"></i>
+            </a>
+          </div>
+          <!-- Footer About Text-->
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4">About Founder</h4>
+            <p class="lead mb-0">
+              Ernesto is a pragmatic software engineer with a growth mindset and a team-based mentality. When he's not creating, he is outside playing soccer!
+              <a
+                href="http://startbootstrap.com"
+              >Start Bootstrap</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style>
-html {
-  background: url("./views/images/soccer_field.jpeg") no-repeat center center
-    fixed;
-  background-size: cover;
-  height: 100%;
-}
-li {
-  list-style: none;
-  color: red;
-}
-img {
-  width: 50%;
-  max-height: 75vh;
-}
-#app {
-  font-family: "Ubuntu", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #f7f7f7;
-}
-
-#nav {
-  padding: 20px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #f7f7f7;
-}
-
-#nav a.router-link-exact-active {
-  color: #f7f7f7;
-}
 </style>
+
+<script>
+export default {
+  mounted: function() {
+    setupTheme();
+  }
+};
+</script>
