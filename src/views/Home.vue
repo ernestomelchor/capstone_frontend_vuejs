@@ -19,7 +19,6 @@
         <p class="masthead-subheading font-weight-light mb-0">{{ subTitle }}</p>
       </div>
     </header>
-    <h1>{{ message }}</h1>
   </div>
 </template>
 
@@ -30,7 +29,7 @@
 export default {
   data: function() {
     return {
-      message: "SoccerApp",
+      message: "Soccer App",
       subTitle: "Welcome to the beautiful game!"
     };
   },
