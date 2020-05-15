@@ -1,5 +1,5 @@
 <template>
-  <div class="games-show text-white">
+  <div class="games-show text-white text-center">
     <img v-bind:src="game.field.image_url" alt="Picture of Soccer Field" />
     <br />
     <div>

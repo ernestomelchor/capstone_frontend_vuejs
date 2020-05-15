@@ -1,5 +1,5 @@
 <template>
-  <div class="games-index text-white">
+  <div class="games-index text-white text-center">
     <h1>{{ message }}</h1>
     <br />
     <div v-for="game in games">
@@ -8,21 +8,14 @@
       </div>
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
-        <br />
-        <u>When</u>
+        <br />When
       </h3>
       <h5>{{ game.scheduled }}</h5>
-      <h3>
-        <u>Where</u>
-      </h3>
+      <h3>Where</h3>
       <h5>{{ game.field.name }}</h5>
-      <h3>
-        <u>Address</u>
-      </h3>
+      <h3>Address</h3>
       <h5>{{ game.field.address }}</h5>
-      <h3>
-        <u>Current Total Attending</u>
-      </h3>
+      <h3>Current Total Attending</h3>
       <h5>{{ game.players_attending }}</h5>
       <!-- Insert Buttons Here-->
       <div>

@@ -60,7 +60,12 @@ img {
   width: 50%;
   max-height: 75vh;
 }
-li {
+
+li.attendance {
+  color: #fff;
+  list-style: none;
+}
+li.text-danger {
   color: red;
   list-style: none;
 }
@@ -113,6 +118,11 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+h1,
+h3 {
+  color: #2c3e50;
 }
 
 p {

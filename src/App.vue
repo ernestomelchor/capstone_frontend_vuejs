@@ -8,6 +8,7 @@
       <router-link to="/signup">Signup</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/logout">Logout</router-link>
+      <router-link to="/player_games">Games Attending</router-link>
     </div>-->
 
     <!-- Navigation-->
@@ -39,6 +40,12 @@
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="/games/new"
               >Create a Game</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/player_games"
+              >Games Attending</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
