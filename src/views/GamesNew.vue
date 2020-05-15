@@ -1,5 +1,5 @@
 <template>
-  <div class="games-new">
+  <div class="games-new text-white">
     <h1>Schedule Your Own Game!</h1>
     <form v-on:submit.prevent="createGame()">
       <ul>
@@ -11,11 +11,13 @@
           <option v-for="field in fields" v-bind:value="field.id" :key="field.id">{{ field.name }}</option>
         </select>
       </div>
+      <br />
       <div>
         <b>Date and Time:</b>
         <input type="datetime-local" v-model="newDateTime" />
       </div>
-      <input type="submit" value="Create" />
+      <br />
+      <input type="submit" class="btn btn-primary" value="Create" />
     </form>
   </div>
 </template>

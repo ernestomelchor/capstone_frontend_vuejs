@@ -1,5 +1,5 @@
 <template>
-  <div class="logout"></div>
+  <div class="logout text-white"></div>
 </template>
 
 <script>

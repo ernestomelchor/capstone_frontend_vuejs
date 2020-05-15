@@ -1,29 +1,32 @@
 <template>
-  <div class="games-index">
+  <div class="games-index text-white">
     <h1>{{ message }}</h1>
+    <br />
     <div v-for="game in games">
       <div v-for="player in game.player_games">
         <!-- <b>{{ player.player_game_id }}</b> -->
       </div>
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
-        <b>When:</b>
-        {{ game.scheduled }}
+        <br />
+        <u>When</u>
       </h3>
+      <h5>{{ game.scheduled }}</h5>
       <h3>
-        <b>Where:</b>
-        {{ game.field.name }}
+        <u>Where</u>
       </h3>
+      <h5>{{ game.field.name }}</h5>
       <h3>
-        <b>Address:</b>
-        {{ game.field.address }}
+        <u>Address</u>
       </h3>
+      <h5>{{ game.field.address }}</h5>
       <h3>
-        <b>Current Total Attending:</b>
-        {{ game.players_attending }}
+        <u>Current Total Attending</u>
       </h3>
+      <h5>{{ game.players_attending }}</h5>
       <!-- Insert Buttons Here-->
       <div>
+        <br />
         <button>
           <router-link v-bind:to="`/games/${game.id}`">
             <b>More Info</b>
@@ -32,11 +35,11 @@
       </div>
       <br />
       <div>
-        <button v-if="!game.attending" v-on:click="createPlayerGame(game)">
+        <button class="btn btn-primary" v-if="!game.attending" v-on:click="createPlayerGame(game)">
           <b>Attend Game</b>
         </button>
         <!-- This button below does not work because I am giving it a game.id instead of a player_game.id which I don't know how to access at this time -->
-        <button v-if="game.attending" v-on:click="destroyPlayerGame(game)">
+        <button class="btn btn-primary" v-if="game.attending" v-on:click="destroyPlayerGame(game)">
           <b>Cancel Attendance</b>
         </button>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="games-show">
+  <div class="games-show text-white">
     <img v-bind:src="game.field.image_url" alt="Picture of Soccer Field" />
     <br />
     <div>
@@ -14,22 +14,28 @@
     </div>
     <br />
     <h3>
-      <b>When:</b>
-      {{ game.scheduled }}
+      <u>When</u>
     </h3>
+    <h5>{{ game.scheduled }}</h5>
     <h3>
-      <b>Where:</b>
-      {{ game.field.name }}
+      <br />
+      <u>Where</u>
     </h3>
+    <h5>{{ game.field.name }}</h5>
     <h3>
-      <b>Address:</b>
-      {{ game.field.address }}
+      <br />
+      <u>Address</u>
     </h3>
-    <b>Players Attending:</b>
+    <h5>{{ game.field.address }}</h5>
+    <h3>
+      <br />
+      <u>Players Attending</u>
+    </h3>
     <div v-for="player in game.players_attending" :key="player.id">
-      <h3>{{ player.name }}</h3>
+      <h5>{{ player.name }}</h5>
     </div>
-    <router-link to="/games">
+    <br />
+    <router-link class="btn btn-primary" to="/games">
       <b>Back to All Games</b>
     </router-link>
   </div>
