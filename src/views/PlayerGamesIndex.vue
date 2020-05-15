@@ -19,7 +19,7 @@
           <!-- Portfolio Grid Items-->
           <div class="row">
             <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col">
               <div
                 class="portfolio-item mx-auto"
                 data-toggle="modal"
@@ -44,10 +44,12 @@
                   <li class="attendance">{{ playerGame.game_field.name }}</li>
                 </h6>
                 <h3>Address</h3>
-                <li class="attendance">({{ playerGame.game_field.address }})</li>
+                <h6>
+                  <li class="attendance">({{ playerGame.game_field.address }})</li>
+                </h6>
                 <h3>When</h3>
                 <h6>
-                  <li class="attendance">{{ playerGame.game_date_time}}</li>
+                  <li class="attendance">{{ playerGame.game_date_time }}</li>
                 </h6>
               </div>
             </div>
@@ -89,14 +91,18 @@
                       <div class="divider-custom-line"></div>
                     </div>
                     <!-- Portfolio Modal - Image-->
-                    <img class="img-fluid rounded mb-5" :src="`${playerGame.field_image}`" alt />
+                    <img class="img-fluid rounded mb-4" :src="`${playerGame.field_image}`" alt />
                     <!-- Portfolio Modal - Text-->
-                    <p class="mb-5">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Mollitia neque assumenda ipsam nihil, molestias magnam,
-                      recusandae quos quis inventore quisquam velit asperiores, vitae?
-                      Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                    </p>
+                    <h3 class="mb-4">{{ playerGame.game_field.address }}</h3>
+                    <h3 class="mb-4">{{ playerGame.game_date_time }}</h3>
+                    <div>
+                      <button>
+                        <router-link v-bind:to="`/games/${playerGame.game_id}`">
+                          <b>See Full Game Page</b>
+                        </router-link>
+                      </button>
+                    </div>
+                    <br />
                     <button class="btn btn-primary" href="#" data-dismiss="modal">
                       <i class="fas fa-times fa-fw"></i>Close Window
                     </button>

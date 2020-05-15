@@ -1,5 +1,5 @@
 <template>
-  <div class="about text-white">
+  <div class="about text-white text-center">
     <!-- About Section Content-->
     <div class="row">
       <div class="col-lg-4 ml-auto">
