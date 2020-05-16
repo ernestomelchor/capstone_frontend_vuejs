@@ -35,13 +35,13 @@
                 href="/games"
               >See All Games</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if="jwt" class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="/games/new"
               >Create a Game</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if="jwt" class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="/player_games"
@@ -50,13 +50,13 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if="!jwt" class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Signup</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if="!jwt" class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if="jwt" class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/logout">Logout</a>
             </li>
           </ul>
@@ -159,6 +159,19 @@
 export default {
   mounted: function() {
     setupTheme();
+  },
+  data: function() {
+    return {
+      jwt: null
+    };
+  },
+  created: function() {
+    this.setJwt();
+  },
+  methods: {
+    setJwt: function() {
+      this.jwt = localStorage.jwt;
+    }
   }
 };
 </script>
