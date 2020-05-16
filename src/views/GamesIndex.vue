@@ -24,7 +24,7 @@
       <!-- Insert Buttons Here-->
       <div>
         <br />
-        <button>
+        <button class="btn btn-primary">
           <router-link v-bind:to="`/games/${game.id}`">
             <b>More Info</b>
           </router-link>

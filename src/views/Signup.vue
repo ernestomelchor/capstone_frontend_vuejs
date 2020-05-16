@@ -3,6 +3,10 @@
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Signup</h1>
+        <h5>
+          Already have an account yet?
+          <a href="/login">Log in!</a>
+        </h5>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
