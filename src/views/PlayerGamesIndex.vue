@@ -2,8 +2,9 @@
   <div class="player-games-index text-white text-center">
     <!-- Portfolio Section Heading-->
     <h2
-      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+      class="page-section-heading text-center text-uppercase text-secondary mb-3"
     >Games You Are Attending: {{ playerGames.length }}</h2>
+    <h2 v-if="playerGames.length === 0">Sign up for a game today!</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
