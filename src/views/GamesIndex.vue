@@ -5,6 +5,7 @@
     <div id="map"></div>
     <br />
     <br />
+
     <div v-for="game in games">
       <div v-for="player in game.player_games">
         <!-- <b>{{ player.player_game_id }}</b> -->
@@ -58,6 +59,19 @@ export default {
   components: {
     HelloWorld
   },
+  data: function() {
+    return {
+      message: "Come Join a Game!",
+      games: [],
+      places: [
+        {
+          address: "215 W Ohio St, Chicago, IL",
+          description: "Actualize Coding Bootcamp"
+        },
+        { address: "Navy Pier", description: "A touristy amusement park" }
+      ]
+    };
+  },
   mounted: function() {
     mapboxgl.accessToken =
       "pk.eyJ1IjoiZXJuZXN0b21lbGNob3IiLCJhIjoiY2s5YnpvcmljMDAwYzNrbWxiaDM1NjZ4bCJ9.xg_ekA9tmYEZcUDVqBFlOQ";
@@ -66,7 +80,7 @@ export default {
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
       center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 9 // starting zoom
+      zoom: 10 // starting zoom
     });
     this.places.forEach(place => {
       mapboxClient.geocoding
@@ -94,19 +108,6 @@ export default {
           }
         });
     });
-  },
-  data: function() {
-    return {
-      message: "Come Join a Game!",
-      games: [],
-      places: [
-        {
-          address: "215 W Ohio St, Chicago, IL",
-          description: "Actualize Coding Bootcamp"
-        },
-        { address: "Navy Pier", description: "A touristy amusement park" }
-      ]
-    };
   },
   created: function() {
     axios.get("/api/games").then(response => {
