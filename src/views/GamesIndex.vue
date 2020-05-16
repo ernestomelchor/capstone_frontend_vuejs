@@ -65,10 +65,25 @@ export default {
       games: [],
       places: [
         {
-          address: "215 W Ohio St, Chicago, IL",
-          description: "Actualize Coding Bootcamp"
+          address: "5099 N Albany Ave, Chicago, IL 60625",
+          description: "Chicago Celtic Training Field"
         },
-        { address: "Navy Pier", description: "A touristy amusement park" }
+        {
+          address: "3373 N Rockwell St, Chicago, IL 60618",
+          description: "Clark Turf Field"
+        },
+        {
+          address: "Lakefront Trail, Chicago, IL 60640",
+          description: "Foster Turf Field"
+        },
+        {
+          address: "4430 S Marshfield Ave, Chicago, IL 60609",
+          description: "Davis Square Park Field"
+        },
+        {
+          address: "1778 N John C, N Cannon Dr, Chicago, IL 60614",
+          description: "Lincoln Park Turf Field"
+        }
       ]
     };
   },
@@ -80,7 +95,7 @@ export default {
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
       center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 10 // starting zoom
+      zoom: 9 // starting zoom
     });
     this.places.forEach(place => {
       mapboxClient.geocoding
