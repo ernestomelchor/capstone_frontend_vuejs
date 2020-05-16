@@ -63,8 +63,7 @@
         </div>
       </div>
     </nav>
-
-    <!-- Added this div with 5 breaks for a quick fix  -->
+    <!-- Added this div with 6 breaks for a quick fix  -->
     <div>
       <br />
       <br />
@@ -73,12 +72,11 @@
       <br />
       <br />
     </div>
-
-    <router-view />
-
-    <!-- Added this div with 1 break for a quick fix  -->
     <div>
-      <br />
+      <router-view />
+    </div>
+    <!-- Added this div with 2 breaks for a quick fix  -->
+    <div>
       <br />
     </div>
     <!-- Footer-->
@@ -135,14 +133,12 @@
         </div>
       </div>
     </footer>
-
     <!-- Copyright Section-->
     <section class="copyright py-4 text-center text-white">
       <div class="container">
         <small>Copyright © Soccer App 2020</small>
       </div>
     </section>
-
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">
       <a class="js-scroll-trigger d-block text-center text-white rounded" href="/">

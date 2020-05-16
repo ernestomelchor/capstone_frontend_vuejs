@@ -1,5 +1,5 @@
 <template>
-  <div class="games-new text-white">
+  <div class="games-new text-white text-center">
     <h1>Schedule Your Own Game!</h1>
     <form v-on:submit.prevent="createGame()">
       <ul>

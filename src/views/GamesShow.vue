@@ -4,11 +4,11 @@
     <br />
     <div>
       <br />
-      <button v-if="!game.attending" v-on:click="createPlayerGame(game)">
+      <button class="btn btn-primary" v-if="!game.attending" v-on:click="createPlayerGame(game)">
         <b>Attend Game</b>
       </button>
       <!-- This button below does not work because I am giving it a game.id instead of a player_game.id which I don't know how to access at this time -->
-      <button v-if="game.attending" v-on:click="destroyPlayerGame(game)">
+      <button class="btn btn-primary" v-if="game.attending" v-on:click="destroyPlayerGame(game)">
         <b>Cancel Attendance</b>
       </button>
     </div>
