@@ -88,8 +88,7 @@ export default {
     };
   },
   mounted: function() {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiZXJuZXN0b21lbGNob3IiLCJhIjoiY2s5YnpvcmljMDAwYzNrbWxiaDM1NjZ4bCJ9.xg_ekA9tmYEZcUDVqBFlOQ";
+    mapboxgl.accessToken = process.env.VUE_APP_SOCCER_API_KEY;
     var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
     var map = new mapboxgl.Map({
       container: "map", // container id
