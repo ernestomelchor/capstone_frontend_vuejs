@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <!-- Masthead-->
+    <div class="soccer"></div>
+
     <header class="masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
@@ -11,7 +13,7 @@
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
-            <i class="fas fa-futbol animation-target"></i>
+            <i class="fas fa-futbol"></i>
           </div>
           <div class="divider-custom-line"></div>
         </div>
