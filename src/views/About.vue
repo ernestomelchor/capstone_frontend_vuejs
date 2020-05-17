@@ -1,20 +1,63 @@
 <template>
   <div class="about text-white text-center">
-    <!-- About Section Content-->
-    <div class="row">
-      <div class="col-lg-5 ml-auto text-center">
-        <p class="lead">
-          We at Soccer App are all about conecting you to soccer games in your area
-          and making sure you have a good time. Check out all games, attend, or
-          schedule your own!
-        </p>
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-4">About</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-futbol animation-target"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row mb-4">
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">
+              We at Soccer App are all about conecting you to soccer games in your area
+              and making sure you have a good time. Check out all games, attend, or
+              schedule your own!
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <p class="lead">
+              Please practice good sportsmanship and community
+              building throughout. Enjoy the beautiful game!
+            </p>
+          </div>
+        </div>
+
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-4">My Code!</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-futbol animation-target"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+          <a
+            class="btn btn-xl btn-outline-light"
+            href="https://github.com/ernestomelchor/capstone_frontend_vuejs"
+          >
+            <i class="fas fa-download mr-2"></i>Frontend Repo!
+          </a>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+          <a
+            class="btn btn-xl btn-outline-light"
+            href="https://github.com/ernestomelchor/capstone_backend"
+          >
+            <i class="fas fa-download mr-2"></i>Backend Repo!
+          </a>
+        </div>
       </div>
-      <div class="col-lg-5 mr-auto text-center">
-        <p class="lead">
-          Please practice good sportsmanship and community
-          building throughout. Enjoy the beautiful game!
-        </p>
-      </div>
-    </div>
+    </section>
   </div>
 </template>
