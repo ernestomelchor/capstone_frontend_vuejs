@@ -50,7 +50,7 @@
                 </h6>
                 <h3>Address</h3>
                 <h6>
-                  <li class="attendance">({{ playerGame.game_field.address }})</li>
+                  <li class="attendance">{{ playerGame.game_field.address }}</li>
                 </h6>
               </div>
             </div>

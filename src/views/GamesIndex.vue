@@ -7,9 +7,7 @@
     <br />
 
     <div v-for="game in games">
-      <div v-for="player in game.player_games">
-        <!-- <b>{{ player.player_game_id }}</b> -->
-      </div>
+      <div v-for="player in game.player_games"></div>
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
         <br />When
@@ -83,6 +81,18 @@ export default {
         {
           address: "1778 N John C, N Cannon Dr, Chicago, IL 60614",
           description: "Lincoln Park Turf Field"
+        },
+        {
+          address: "1440 N Humboldt Dr, Chicago, IL 60622",
+          description: "All State Field"
+        },
+        {
+          address: "330 W Webster Ave, Chicago, IL 60614",
+          description: "Parker Field"
+        },
+        {
+          address: "2741 W Montrose Ave, Chicago, IL 60618",
+          description: "Horner Park Mini-Pitch"
         }
       ]
     };
