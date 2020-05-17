@@ -76,10 +76,10 @@ export default {
       };
       axios.delete("/api/player_games/" + game.id).then(response => {
         game.attending = false;
+        window.location.reload();
         this.games.forEach(function(game) {
           if (game.id === params.game_id) {
             game.players_attending--;
-            location.refresh("/api/games");
           }
         });
       });

@@ -52,6 +52,7 @@ export default {
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/");
+          window.location.reload();
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];

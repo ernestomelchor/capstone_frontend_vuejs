@@ -155,7 +155,6 @@ export default {
         this.games.forEach(function(game) {
           if (game.id === params.game_id) {
             game.players_attending--;
-            location.refresh("/api/games");
           }
         });
       });

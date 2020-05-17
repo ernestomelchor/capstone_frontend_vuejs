@@ -76,9 +76,9 @@ li.text-danger {
   height: 100px;
   width: 100px;
   position: fixed;
-  -webkit-animation: roll 5s infinite;
-  -moz-animation: roll 5s infinite;
-  animation: roll 5s infinite;
+  -webkit-animation: roll 10s infinite;
+  -moz-animation: roll 10s infinite;
+  animation: roll 10s infinite;
 }
 
 @-moz-keyframes roll {
@@ -112,15 +112,15 @@ li.text-danger {
 
 @keyframes roll {
   0% {
-    left: 0px;
+    left: -40%;
     -webkit-transform: rotate(-360deg);
   }
   50% {
-    left: 1000px;
+    left: 110%;
     -webkit-transform: rotate(360deg);
   }
   100% {
-    left: 0px;
+    left: -40%;
     -webkit-transform: rotate(-360deg);
   }
 }

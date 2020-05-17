@@ -87,7 +87,7 @@
           <div class="col-lg-4 mb-5 mb-lg-0">
             <h4 class="text-uppercase mb-4">Headquarters</h4>
             <p class="lead mb-0">
-              Chicago, IL 60645
+              Chicago, Illinois
               <br />USA
             </p>
           </div>
@@ -124,7 +124,7 @@
           <div class="col-lg-4">
             <h4 class="text-uppercase mb-4">About Founder</h4>
             <p class="lead mb-0">
-              When Ernesto is not playing soccer, he is messing around with Boostrap themes!
+              When Ernesto is not playing soccer, he is playing around with Bootstrap themes!
               <a
                 href="http://startbootstrap.com"
               >Start Bootstrap</a>.
