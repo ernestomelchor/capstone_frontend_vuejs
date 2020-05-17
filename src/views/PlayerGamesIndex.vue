@@ -39,18 +39,18 @@
                   alt="Picture of Soccer Field You Are Attending"
                 />
                 <h3>
-                  <br />Where
+                  <br />When
                 </h3>
+                <h6>
+                  <li class="attendance">{{ playerGame.game_date_time }}</li>
+                </h6>
+                <h3>Where</h3>
                 <h6>
                   <li class="attendance">{{ playerGame.game_field.name }}</li>
                 </h6>
                 <h3>Address</h3>
                 <h6>
                   <li class="attendance">({{ playerGame.game_field.address }})</li>
-                </h6>
-                <h3>When</h3>
-                <h6>
-                  <li class="attendance">{{ playerGame.game_date_time }}</li>
                 </h6>
               </div>
             </div>
@@ -87,7 +87,7 @@
                     <div class="divider-custom">
                       <div class="divider-custom-line"></div>
                       <div class="divider-custom-icon">
-                        <i class="fas fa-futbol"></i>
+                        <i class="fas fa-futbol animation-target"></i>
                       </div>
                       <div class="divider-custom-line"></div>
                     </div>
@@ -97,7 +97,7 @@
                     <h3 class="mb-4">{{ playerGame.game_field.address }}</h3>
                     <h3 class="mb-4">{{ playerGame.game_date_time }}</h3>
                     <div>
-                      <button>
+                      <button v-on:click="goTo()">
                         <router-link v-bind:to="`/games/${playerGame.game_id}`">
                           <b>See Full Game Page</b>
                         </router-link>
@@ -132,6 +132,10 @@ export default {
       this.playerGames = response.data;
     });
   },
-  methods: {}
+  methods: {
+    goTo: function() {
+      window.location.reload();
+    }
+  }
 };
 </script>
