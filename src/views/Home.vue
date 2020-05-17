@@ -11,7 +11,7 @@
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
-            <i class="fas fa-futbol"></i>
+            <i class="fas fa-futbol animation-target"></i>
           </div>
           <div class="divider-custom-line"></div>
         </div>
