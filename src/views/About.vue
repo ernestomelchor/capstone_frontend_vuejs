@@ -1,12 +1,12 @@
 <template>
-  <div class="about text-white text-center">
+  <div class="about text-center">
     <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
+    <section class="page-section bg-primary mb-0" id="about">
       <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white mb-4">About</h2>
+        <h2 class="page-section-heading text-center text-uppercase mb-4">About</h2>
         <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
+        <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
             <i class="fas fa-futbol animation-target"></i>
@@ -14,7 +14,7 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- About Section Content-->
-        <div class="row mb-4">
+        <div class="row mb-4 text-white">
           <div class="col-lg-4 ml-auto">
             <p class="lead">
               We at Soccer App are all about conecting you to soccer games in your area
@@ -30,9 +30,9 @@
           </div>
         </div>
 
-        <h2 class="page-section-heading text-center text-uppercase text-white mb-4">My Code!</h2>
+        <h2 class="page-section-heading text-center text-uppercase mb-4">My Code!</h2>
         <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
+        <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
             <i class="fas fa-futbol animation-target"></i>
