@@ -6,7 +6,7 @@
       <router-link to="/games/new">Create Game</router-link>|
       <router-link to="/fields/new">Add a Field</router-link>|
       <router-link to="/about">About</router-link>|
-      <router-link to="/signup">Signup</router-link>|
+      <router-link to="/signup">Sign Up</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/logout">Logout</router-link>
       <router-link to="/player_games">Games Attending</router-link>
@@ -56,7 +56,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about">About</a>
             </li>
             <li v-if="!jwt" class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Signup</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/signup">Sign Up</a>
             </li>
             <li v-if="!jwt" class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>

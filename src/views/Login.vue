@@ -5,7 +5,7 @@
         <h1>Login</h1>
         <h5>Don't have an account yet?</h5>
         <h5>
-          <a href="/signup">Sign up!</a>
+          <a href="/signup">Sign Up!</a>
         </h5>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>

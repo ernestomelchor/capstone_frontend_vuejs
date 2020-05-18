@@ -2,7 +2,7 @@
   <div class="signup text-white text-center">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
         <h5>Already have an account yet?</h5>
         <h5>
           <a href="/login">Log in!</a>
@@ -99,7 +99,9 @@ export default {
           this.$router.push("/login");
         })
         .catch(error => {
+          console.log("Sign Up error(s)", error.response);
           this.errors = error.response.data.errors;
+          this.status = error.response.status;
         });
     }
   }
