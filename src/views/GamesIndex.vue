@@ -1,8 +1,14 @@
 <template>
   <div class="games-index text-white text-center">
-    <h1>{{ message }}</h1>
+    <h1 v-if="jwt">{{ message }}</h1>
+    <div v-if="!jwt">
+      <h1 class="no-jwt text-center">
+        <a href="/signup">Sign Up</a> or
+        <a href="/login">Log In</a> Today to Access All Features!
+      </h1>
+    </div>
     <br />
-    <div id="map"></div>
+    <div v-if="jwt" id="map"></div>
     <br />
     <br />
 
@@ -61,6 +67,7 @@ export default {
     return {
       message: "Come Join a Game!",
       games: [],
+      jwt: null,
       places: [
         {
           address: "5099 N Albany Ave, Chicago, IL 60625",
@@ -134,6 +141,7 @@ export default {
     });
   },
   created: function() {
+    this.setJwt();
     axios.get("/api/games").then(response => {
       console.log("All Games:", response.data);
       this.games = response.data;
@@ -168,6 +176,9 @@ export default {
           }
         });
       });
+    },
+    setJwt: function() {
+      this.jwt = localStorage.jwt;
     }
   }
 };

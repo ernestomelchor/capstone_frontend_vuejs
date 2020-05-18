@@ -4,7 +4,7 @@
     <section class="page-section bg-primary mb-0" id="about">
       <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase mb-4">About</h2>
+        <h3 class="page-section-heading text-center text-uppercase mb-4">About</h3>
         <!-- Icon Divider-->
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <h2 class="page-section-heading text-center text-uppercase mb-4">My Code!</h2>
+        <h3 class="page-section-heading text-center text-uppercase mb-4">My Code!</h3>
         <!-- Icon Divider-->
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
