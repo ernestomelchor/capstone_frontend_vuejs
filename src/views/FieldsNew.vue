@@ -3,7 +3,7 @@
     <h1>New Field</h1>
     <form v-on:submit.prevent="submit()">
       <ul>
-        <li v-for="error in errors">{{ error }}</li>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       <div>
         <b>Name:</b>
@@ -76,7 +76,7 @@ export default {
           this.$refs.fileInput.value = "";
         })
         .catch(error => {
-          console.log(error.response);
+          console.log("Fields create error", error.response);
           this.errors = error.response.data.errors;
         });
     }
