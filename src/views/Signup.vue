@@ -52,12 +52,7 @@
           </label>
           <input type="date" class="form-control" v-model="dob" />
         </div>
-        <div class="form-group">
-          <label>
-            <b>Level (recreational or competitive only):</b>
-          </label>
-          <input type="text" class="form-control" v-model="level" />
-        </div>
+
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>

@@ -1,5 +1,6 @@
 <template>
   <div class="games-show text-white text-center">
+    <h1 class="mb-3">Game Info</h1>
     <img v-bind:src="game.field.image_url" alt="Picture of Soccer Field" />
     <br />
     <div>

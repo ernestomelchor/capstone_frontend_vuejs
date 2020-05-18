@@ -4,6 +4,13 @@
       <li class="text-danger" v-for="error in errors">{{ error }}</li>
     </ul>
     <h1 v-if="jwt">{{ message }}</h1>
+    <div v-if="jwt" class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fas fa-futbol animation-target"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
     <div v-if="!jwt">
       <h1 class="no-jwt text-center mb-5">
         <a href="/signup">Sign Up</a> or
@@ -16,7 +23,6 @@
       />
     </div>
 
-    <br />
     <div v-if="jwt" id="map"></div>
     <br />
     <br />
