@@ -1,39 +1,53 @@
 <template>
   <div class="fields-new text-white text-center">
-    <h1>New Field</h1>
-    <form v-on:submit.prevent="submit()">
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div>
-        <b>Name:</b>
-        <input type="text" v-model="name" />
-      </div>
-      <br />
-      <div>
-        <b>Address:</b>
-        <input type="text" v-model="address" />
-      </div>
-      <br />
-      <div>
-        <b>Open Time:</b>
-        <input type="datetime-local" v-model="open_time" />
-      </div>
-      <br />
-      <div>
-        <b>Close Time:</b>
-        <input type="datetime-local" v-model="close_time" />
-      </div>
-      <br />
-      <div>
-        <b>Image:</b>
-        <input type="file" v-on:change="setFile($event)" ref="fileInput" />
-      </div>
-      <br />
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
+    <img
+      v-if="status"
+      v-bind:src="`https://http.cat/${status}`"
+      alt="HTTP Status Cat (visit https://http.cat/ fore more info"
+    />
+    <div class="container">
+      <h1>New Field</h1>
+      <form v-on:submit.prevent="submit()">
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        </ul>
+        <div class="form-group">
+          <div>
+            <b>Name:</b>
+            <input type="text" class="form-control" v-model="name" />
+          </div>
+          <br />
+          <div>
+            <b>Address:</b>
+            <input type="text" class="form-control" v-model="address" />
+          </div>
+          <br />
+          <div>
+            <b>Open Time:</b>
+            <input type="datetime-local" class="form-control" v-model="open_time" />
+          </div>
+          <br />
+          <div>
+            <b>Close Time:</b>
+            <input type="datetime-local" class="form-control" v-model="close_time" />
+          </div>
+          <br />
+          <div>
+            <b>Image:</b>
+            <input
+              type="file"
+              class="btn btn-primary"
+              v-on:change="setFile($event)"
+              ref="fileInput"
+            />
+          </div>
+          <br />
+          <div>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -48,7 +62,8 @@ export default {
       open_time: "",
       close_time: "",
       image_url: "",
-      errors: []
+      errors: [],
+      status: ""
     };
   },
   created: function() {},
@@ -65,7 +80,6 @@ export default {
       formData.append("open_time", this.open_time);
       formData.append("close_time", this.close_time);
       formData.append("image_url", this.image_url);
-
       axios
         .post("/api/fields", formData)
         .then(response => {
@@ -78,6 +92,7 @@ export default {
         .catch(error => {
           console.log("Fields create error", error.response);
           this.errors = error.response.data.errors;
+          this.status = error.response.status;
         });
     }
   }
