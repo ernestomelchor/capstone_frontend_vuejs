@@ -3,8 +3,8 @@
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Login</h1>
+        <h5>Don't have an account yet?</h5>
         <h5>
-          Don't have an account yet?
           <a href="/signup">Sign up!</a>
         </h5>
         <ul>
