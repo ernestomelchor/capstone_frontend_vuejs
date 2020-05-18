@@ -180,7 +180,9 @@ export default {
             }
           });
         })
-        .catch(errors => console.log(errors.response.data));
+        .catch(errors =>
+          console.log("PlayerGames error", errors.response.data)
+        );
     },
     destroyPlayerGame: function(game) {
       var params = {
