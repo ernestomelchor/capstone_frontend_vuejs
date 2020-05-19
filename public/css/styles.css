@@ -77,9 +77,9 @@ li.text-danger {
   height: 100px;
   width: 100px;
   position: fixed;
-  -webkit-animation: roll 10s infinite;
-  -moz-animation: roll 10s infinite;
-  animation: roll 10s infinite;
+  -webkit-animation: roll 20s infinite;
+  -moz-animation: roll 20s infinite;
+  animation: roll 20s infinite;
 }
 
 @-moz-keyframes roll {
@@ -183,7 +183,7 @@ h3 {
 }
 
 h1.no-jwt {
-  color: #ffe9c5
+  color: #ffe9c5;
 }
 
 p {

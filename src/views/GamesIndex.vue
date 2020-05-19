@@ -117,6 +117,10 @@ export default {
         {
           address: "2741 W Montrose Ave, Chicago, IL 60618",
           description: "Horner Park Mini-Pitch"
+        },
+        {
+          address: "6336 N Hoyne Ave, Chicago, IL 60626",
+          description: "Hoyne Athletic Field"
         }
       ]
     };
@@ -130,6 +134,12 @@ export default {
       center: [-87.6298, 41.8781], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+      }),
+      "top-left"
+    );
     this.places.forEach(place => {
       mapboxClient.geocoding
         .forwardGeocode({
