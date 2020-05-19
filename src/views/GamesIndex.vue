@@ -134,8 +134,8 @@ export default {
       center: [-87.6298, 41.8781], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
+    // Add fullscreen map option.
+    map.addControl(new mapboxgl.FullscreenControl());
     // Add geolocate control to the map.
     map.addControl(
       new mapboxgl.GeolocateControl({
@@ -145,6 +145,8 @@ export default {
         trackUserLocation: true
       })
     );
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
     map.addControl(
       new MapboxDirections({
         accessToken: mapboxgl.accessToken
