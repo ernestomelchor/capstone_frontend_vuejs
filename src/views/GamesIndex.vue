@@ -67,7 +67,7 @@
 <style></style>
 
 <script>
-/* global mapboxgl, mapboxSdk */
+/* global mapboxgl, mapboxSdk, MapboxDirections */
 
 // @ is an alias to /src
 import axios from "axios";
@@ -134,6 +134,17 @@ export default {
       center: [-87.6298, 41.8781], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+    // Add geolocate control to the map.
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
     map.addControl(
       new MapboxDirections({
         accessToken: mapboxgl.accessToken
