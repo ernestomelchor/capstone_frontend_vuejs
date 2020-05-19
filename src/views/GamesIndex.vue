@@ -167,9 +167,14 @@ export default {
             response.body.features.length
           ) {
             var feature = response.body.features[0];
+            // create the popup
             var popup = new mapboxgl.Popup({ offset: 25 }).setText(
               place.description
             );
+            // create DOM element for the marker
+            var el = document.createElement("div");
+            el.id = "marker";
+            // create the marker
             new mapboxgl.Marker()
               .setLngLat(feature.center)
               .setPopup(popup)
