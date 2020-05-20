@@ -135,6 +135,50 @@ export default {
         {
           address: "6336 N Hoyne Ave, Chicago, IL 60626",
           description: "Hoyne Athletic Field"
+        },
+        {
+          address: "330 Dodge Ave, Evanston, IL 60202",
+          description: "Robert E. James Park Soccer Field"
+        },
+        {
+          address: "7345 N Washtenaw Ave, Chicago, IL 60645",
+          description: "Rogers Park Soccer Field"
+        },
+        {
+          address: "1335 Marin Dr, Chicago, IL 60622",
+          description: "Humboldt Cage"
+        },
+        {
+          address: "7000 N Sacramento Ave, Chicago, IL 60645",
+          description: "Lerner Park Soccer Field"
+        },
+        {
+          address: "7340 N Rogers Ave, Chicago, IL 60626",
+          description: "Pottawattomie Park"
+        },
+        {
+          address: "4715 W Devon Ave, Chicago, IL 60646",
+          description: "Queen of All Saints Field"
+        },
+        {
+          address: "5801 N Pulaski Rd, Chicago, IL 60646",
+          description: "Peterson Park Soccer Field"
+        },
+        {
+          address: "6500 S. Racine Ave. Chicago, IL 60636",
+          description: "Ogden Park Soccer Field"
+        },
+        {
+          address: "5701 S Shields Ave, Chicago, IL 60621",
+          description: "Sherwood Park Soccer Field"
+        },
+        {
+          address: "S Farrar Dr, Chicago, IL 60623",
+          description: "Douglas Park Soccer Field"
+        },
+        {
+          address: "3357 S Shields Ave, Chicago, IL 60616",
+          description: "Armour Square Park Soccer Field"
         }
       ]
     };
@@ -146,7 +190,7 @@ export default {
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
       center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 9 // starting zoom
+      zoom: 10 // starting zoom
     });
     // disable map zoom when using scroll
     map.scrollZoom.disable();
