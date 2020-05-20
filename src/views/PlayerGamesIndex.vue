@@ -1,9 +1,11 @@
 <template>
   <div class="player-games-index text-white text-center">
     <!-- Portfolio Section Heading-->
-    <h2
-      class="page-section-heading text-center text-uppercase text-secondary mb-3"
-    >Games You Are Attending: {{ playerGames.length }}</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-3">
+      Games You Are Attending:
+      <br />
+      {{ playerGames.length }}
+    </h2>
     <h2 v-if="playerGames.length === 0">Sign up for a game today!</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -13,7 +15,12 @@
       </div>
       <div class="divider-custom-line"></div>
     </div>
-    <div v-for="playerGame in playerGames">
+    <div class="searchbar container-fluid mb-4">
+      Search:
+      <input type="text" v-model="filterText" />
+      Results: {{ filterBy(playerGames, filterText).length }}
+    </div>
+    <div v-for="playerGame in filterBy(playerGames, filterText)">
       <!-- Portfolio Section-->
       <section class="page-section portfolio" id="portfolio">
         <div class="container">
@@ -119,10 +126,15 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
+
   data: function() {
     return {
-      playerGames: []
+      playerGames: [],
+      filterText: ""
     };
   },
   created: function() {

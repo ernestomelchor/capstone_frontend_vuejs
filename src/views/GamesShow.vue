@@ -30,9 +30,9 @@
     <h5>{{ game.field.address }}</h5>
     <h3>
       <br />
-      <u>Players Attending</u>
+      <u>Players Attending:</u>
     </h3>
-    <div v-for="player in game.players_attending" :key="player.id">
+    <div v-for="player in game.players_attending">
       <h5>{{ player.name }}</h5>
     </div>
     <br />
