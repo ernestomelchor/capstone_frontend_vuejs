@@ -26,7 +26,17 @@
     <div v-if="jwt" id="map"></div>
     <br />
     <br />
-
+    <h3 v-if="jwt" class="mb-3 text-cemter">Current Weather in Chicago</h3>
+    <div v-if="jwt" class="col-lg-3 weather-widget mb-5 text-center">
+      <h6>Forecast:</h6>
+      {{ weather }}
+      <h6>Temperature:</h6>
+      {{ temperature }}°F
+      <h6>Feels Like:</h6>
+      {{ feelsLike }}°F
+      <h6>Winds:</h6>
+      {{ windSpeed }}MPH
+    </div>
     <div v-for="game in games">
       <div v-for="player in game.player_games"></div>
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
@@ -81,6 +91,10 @@ export default {
   data: function() {
     return {
       message: "Come Join a Game!",
+      weather: {},
+      temperature: {},
+      feelsLike: {},
+      windSpeed: {},
       games: [],
       jwt: null,
       status: "",
@@ -134,6 +148,8 @@ export default {
       center: [-87.6298, 41.8781], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
+    // disable map zoom when using scroll
+    map.scrollZoom.disable();
     // Add fullscreen map option.
     map.addControl(new mapboxgl.FullscreenControl());
     // Add geolocate control to the map.
@@ -186,6 +202,25 @@ export default {
     });
   },
   created: function() {
+    var AERISID = process.env.VUE_APP_AERISWEATHER_ID;
+    var AERISKEY = process.env.VUE_APP_AERISWEATHER_SECRET;
+    const url = `https://api.aerisapi.com/observations/:auto?&format=json&filter=allstations&limit=1&fields=loc,ob.tempF,ob.windSpeedMPH,ob.weather,ob.feelslikeF&client_id=${AERISID}&client_secret=${AERISKEY}`;
+
+    fetch(url)
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        if (!json.success) {
+          console.log("Oh no!");
+        } else {
+          console.log(json);
+          this.weather = json.response.ob.weather;
+          this.temperature = json.response.ob.tempF;
+          this.feelsLike = json.response.ob.feelslikeF;
+          this.windSpeed = json.response.ob.windSpeedMPH;
+        }
+      });
     this.setJwt();
     axios
       .get("/api/games")
