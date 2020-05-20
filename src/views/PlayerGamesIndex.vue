@@ -34,7 +34,6 @@
                   </div>
                 </div>
                 <img
-                  class="img-fluid"
                   :src="`${playerGame.field_image}`"
                   alt="Picture of Soccer Field You Are Attending"
                 />

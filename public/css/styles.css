@@ -330,8 +330,10 @@ figure {
 }
 
 img {
-  width: 40%;
+  max-width: 50vw;
   max-height: 65vh;
+  margin-left: auto;
+  margin-right: auto;
   vertical-align: middle;
   border-style: none;
   border-radius: 15px;
@@ -12501,7 +12503,7 @@ a.text-dark:focus {
   cursor: pointer;
   position: relative;
   display: block;
-  max-width: 25rem;
+  max-width: 75rem;
   border-radius: 0.5rem;
   overflow: hidden;
 }
