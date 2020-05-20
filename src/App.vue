@@ -132,9 +132,8 @@
             <h4 class="text-uppercase mb-4">About Founder</h4>
             <p class="lead mb-0">
               When Ernesto is not playing soccer, he is playing around with Bootstrap themes!
-              <a
-                href="http://startbootstrap.com"
-              >Start Bootstrap</a>.
+              <br />
+              <a href="http://startbootstrap.com">Start Bootstrap</a>.
             </p>
           </div>
         </div>
