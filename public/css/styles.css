@@ -330,10 +330,11 @@ figure {
 }
 
 img {
-  width: 50%;
-  max-height: 75vh;
+  width: 40%;
+  max-height: 65vh;
   vertical-align: middle;
   border-style: none;
+  border-radius: 15px;
 }
 
 svg {

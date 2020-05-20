@@ -26,16 +26,16 @@
     <div v-if="jwt" id="map"></div>
     <br />
     <br />
-    <h3 v-if="jwt" class="mb-3 text-cemter">Current Weather in Chicago</h3>
-    <div v-if="jwt" class="col-lg-3 weather-widget mb-5 text-center">
-      <h6>Forecast:</h6>
-      {{ weather }}
-      <h6>Temperature:</h6>
-      {{ temperature }}°F
-      <h6>Feels Like:</h6>
-      {{ feelsLike }}°F
-      <h6>Winds:</h6>
-      {{ windSpeed }}MPH
+    <h3 v-if="jwt" class="mb-4 text-center">Current Weather in Chicago</h3>
+    <div v-if="jwt" class="weather-widget text-center mb-4">
+      <h5 class="text-white">Forecast:</h5>
+      <p>{{ weather }}</p>
+      <h5 class="text-white">Temp:</h5>
+      <p>{{ temperature }}°F</p>
+      <h5 class="text-white">Feels Like:</h5>
+      <p>{{ feelsLike }}°F</p>
+      <h5 class="text-white">Winds:</h5>
+      <p>{{ windSpeed }}MPH</p>
     </div>
     <div v-for="game in games">
       <div v-for="player in game.player_games"></div>
