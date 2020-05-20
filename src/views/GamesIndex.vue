@@ -37,7 +37,12 @@
       <h5 class="text-white">Winds:</h5>
       <p>{{ windSpeed }}MPH</p>
     </div>
-    <div v-for="game in games">
+    <div class="searchbar container-fluid mb-4">
+      Search:
+      <input type="text" v-model="filterText" />
+      Results: {{ filterBy(games, filterText).length }}
+    </div>
+    <div v-for="game in filterBy(games, filterText)">
       <div v-for="player in game.player_games"></div>
       <img :src="`${game.field.image_url}`" alt="Picture of Soccer Field" />
       <h3>
@@ -82,8 +87,10 @@
 // @ is an alias to /src
 import axios from "axios";
 import HelloWorld from "@/components/HelloWorld.vue";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   name: "Home",
   components: {
     HelloWorld
@@ -96,6 +103,7 @@ export default {
       feelsLike: {},
       windSpeed: {},
       games: [],
+      filterText: "",
       jwt: null,
       status: "",
       errors: [],
