@@ -138,7 +138,7 @@ export default {
         },
         {
           address: "330 Dodge Ave, Evanston, IL 60202",
-          description: "Robert E. James Park Soccer Field"
+          description: "James Park Soccer Field"
         },
         {
           address: "7345 N Washtenaw Ave, Chicago, IL 60645",
@@ -190,7 +190,7 @@ export default {
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
       center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 10 // starting zoom
+      zoom: 9 // starting zoom
     });
     // disable map zoom when using scroll
     map.scrollZoom.disable();
