@@ -20,7 +20,7 @@
       <input type="text" v-model="filterText" />
       Results: {{ filterBy(playerGames, filterText).length }}
     </div>
-    <div v-for="playerGame in filterBy(playerGames, filterText)">
+    <div v-for="(playerGame, index) in filterBy(playerGames, filterText)">
       <!-- Portfolio Section-->
       <section class="page-section portfolio" id="portfolio">
         <div class="container">
@@ -31,7 +31,7 @@
               <div
                 class="portfolio-item mx-auto"
                 data-toggle="modal"
-                data-target="#portfolioModal1"
+                v-bind:data-target="`#portfolioModal${index}`"
               >
                 <div
                   class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
@@ -68,7 +68,7 @@
       <!-- Portfolio Modal 1-->
       <div
         class="portfolio-modal modal fade"
-        id="portfolioModal1"
+        v-bind:id="`portfolioModal${index}`"
         tabindex="-1"
         role="dialog"
         aria-labelledby="portfolioModal1Label"

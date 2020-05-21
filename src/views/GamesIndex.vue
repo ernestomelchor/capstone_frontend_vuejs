@@ -37,7 +37,7 @@
       <h5 class="text-white">Winds:</h5>
       <p>{{ windSpeed }}MPH</p>
     </div>
-    <div class="searchbar container-fluid mb-4">
+    <div v-if="jwt" class="searchbar container-fluid mb-4">
       Search:
       <input type="text" v-model="filterText" />
       Results: {{ filterBy(games, filterText).length }}
