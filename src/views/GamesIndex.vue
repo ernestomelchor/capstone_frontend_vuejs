@@ -106,154 +106,10 @@ export default {
       filterText: "",
       jwt: null,
       status: "",
-      errors: [],
-      places: [
-        {
-          address: "5099 N Albany Ave, Chicago, IL 60625",
-          description: "Chicago Celtic Training Field"
-        },
-        {
-          address: "3373 N Rockwell St, Chicago, IL 60618",
-          description: "Clark Turf Field"
-        },
-        {
-          address: "Lakefront Trail, Chicago, IL 60640",
-          description: "Foster Turf Field"
-        },
-        {
-          address: "4430 S Marshfield Ave, Chicago, IL 60609",
-          description: "Davis Square Park Field"
-        },
-        {
-          address: "1778 N John C, N Cannon Dr, Chicago, IL 60614",
-          description: "Lincoln Park Turf Field"
-        },
-        {
-          address: "1440 N Humboldt Dr, Chicago, IL 60622",
-          description: "All State Field"
-        },
-        {
-          address: "330 W Webster Ave, Chicago, IL 60614",
-          description: "Parker Field"
-        },
-        {
-          address: "2741 W Montrose Ave, Chicago, IL 60618",
-          description: "Horner Park Mini-Pitch"
-        },
-        {
-          address: "6336 N Hoyne Ave, Chicago, IL 60626",
-          description: "Hoyne Athletic Field"
-        },
-        {
-          address: "330 Dodge Ave, Evanston, IL 60202",
-          description: "James Park Soccer Field"
-        },
-        {
-          address: "7345 N Washtenaw Ave, Chicago, IL 60645",
-          description: "Rogers Park Soccer Field"
-        },
-        {
-          address: "1335 Marin Dr, Chicago, IL 60622",
-          description: "Humboldt Cage"
-        },
-        {
-          address: "7000 N Sacramento Ave, Chicago, IL 60645",
-          description: "Lerner Park Soccer Field"
-        },
-        {
-          address: "7340 N Rogers Ave, Chicago, IL 60626",
-          description: "Pottawattomie Park"
-        },
-        {
-          address: "4715 W Devon Ave, Chicago, IL 60646",
-          description: "Queen of All Saints Field"
-        },
-        {
-          address: "5801 N Pulaski Rd, Chicago, IL 60646",
-          description: "Peterson Park Soccer Field"
-        },
-        {
-          address: "6500 S. Racine Ave. Chicago, IL 60636",
-          description: "Ogden Park Soccer Field"
-        },
-        {
-          address: "5701 S Shields Ave, Chicago, IL 60621",
-          description: "Sherwood Park Soccer Field"
-        },
-        {
-          address: "S Farrar Dr, Chicago, IL 60623",
-          description: "Douglas Park Soccer Field"
-        },
-        {
-          address: "3357 S Shields Ave, Chicago, IL 60616",
-          description: "Armour Square Park Soccer Field"
-        }
-      ]
+      errors: []
     };
   },
   mounted: function() {
-    mapboxgl.accessToken = process.env.VUE_APP_SOCCER_API_KEY;
-    var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-    var map = new mapboxgl.Map({
-      container: "map", // container id
-      style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-      center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 9 // starting zoom
-    });
-    // disable map zoom when using scroll
-    map.scrollZoom.disable();
-    // Add fullscreen map option.
-    map.addControl(new mapboxgl.FullscreenControl());
-    // Add geolocate control to the map.
-    map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true
-        },
-        trackUserLocation: true
-      })
-    );
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(
-      new MapboxDirections({
-        accessToken: mapboxgl.accessToken
-      }),
-      "top-left"
-    );
-    this.places.forEach(place => {
-      mapboxClient.geocoding
-        .forwardGeocode({
-          query: place.address,
-          autocomplete: false,
-          limit: 1
-        })
-        .send()
-        .then(function(response) {
-          if (
-            response &&
-            response.body &&
-            response.body.features &&
-            response.body.features.length
-          ) {
-            var feature = response.body.features[0];
-            // create the popup
-            var popup = new mapboxgl.Popup({ offset: 25 }).setText(
-              place.description
-            );
-            // create DOM element for the marker
-            var el = document.createElement("div");
-            el.id = "marker";
-            // create the marker
-            new mapboxgl.Marker()
-              .setLngLat(feature.center)
-              .setPopup(popup)
-              .addTo(map);
-          }
-        });
-    });
-  },
-  created: function() {
     var AERISID = process.env.VUE_APP_AERISWEATHER_ID;
     var AERISKEY = process.env.VUE_APP_AERISWEATHER_SECRET;
     const url = `https://api.aerisapi.com/observations/:auto?&format=json&filter=allstations&limit=1&fields=loc,ob.tempF,ob.windSpeedMPH,ob.weather,ob.feelslikeF&client_id=${AERISID}&client_secret=${AERISKEY}`;
@@ -279,6 +135,7 @@ export default {
       .then(response => {
         console.log("All Games:", response.data);
         this.games = response.data;
+        this.setupMap();
       })
       .catch(error => {
         console.log("Games Index error", error.response);
@@ -287,6 +144,68 @@ export default {
       });
   },
   methods: {
+    setupMap: function() {
+      mapboxgl.accessToken = process.env.VUE_APP_SOCCER_API_KEY;
+      var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+      var map = new mapboxgl.Map({
+        container: "map", // container id
+        style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
+        center: [-87.6298, 41.8781], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+      });
+      // disable map zoom when using scroll
+      map.scrollZoom.disable();
+      // Add fullscreen map option.
+      map.addControl(new mapboxgl.FullscreenControl());
+      // Add geolocate control to the map.
+      map.addControl(
+        new mapboxgl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true
+          },
+          trackUserLocation: true
+        })
+      );
+      // Add zoom and rotation controls to the map.
+      map.addControl(new mapboxgl.NavigationControl());
+      map.addControl(
+        new MapboxDirections({
+          accessToken: mapboxgl.accessToken
+        }),
+        "top-left"
+      );
+      this.games.forEach(game => {
+        mapboxClient.geocoding
+          .forwardGeocode({
+            query: game.field_address,
+            autocomplete: false,
+            limit: 1
+          })
+          .send()
+          .then(function(response) {
+            if (
+              response &&
+              response.body &&
+              response.body.features &&
+              response.body.features.length
+            ) {
+              var feature = response.body.features[0];
+              // create the popup
+              var popup = new mapboxgl.Popup({ offset: 25 }).setText(
+                game.field_name
+              );
+              // create DOM element for the marker
+              var el = document.createElement("div");
+              el.id = "marker";
+              // create the marker
+              new mapboxgl.Marker()
+                .setLngLat(feature.center)
+                .setPopup(popup)
+                .addTo(map);
+            }
+          });
+      });
+    },
     createPlayerGame: function(game) {
       var params = {
         game_id: game.id
