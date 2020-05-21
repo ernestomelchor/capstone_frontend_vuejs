@@ -22,7 +22,7 @@
             <input type="text" class="form-control" v-model="address" />
           </div>
           <br />
-          <div>
+          <!-- <div>
             <b>Open Time:</b>
             <input type="datetime-local" class="form-control" v-model="open_time" />
           </div>
@@ -30,7 +30,7 @@
           <div>
             <b>Close Time:</b>
             <input type="datetime-local" class="form-control" v-model="close_time" />
-          </div>
+          </div>-->
           <br />
           <div>
             <b>Image:</b>

@@ -338,12 +338,11 @@ figure {
   border-radius: 50px 50px 10px 10px;
   border: 2px solid #fff;
   padding: 20px;
-  overflow: auto;
 }
 
 img {
   max-width: 50vw;
-  max-height: 65vh;
+  max-height: 50vh;
   margin-left: auto;
   margin-right: auto;
   vertical-align: middle;

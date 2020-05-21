@@ -39,7 +39,12 @@
     </div>
     <div v-if="jwt" class="searchbar container-fluid mb-4">
       Search:
-      <input type="text" v-model="filterText" />
+      <input
+        class="container-fluid text-center"
+        type="text"
+        placeholder="Keyword"
+        v-model="filterText"
+      />
       Results: {{ filterBy(games, filterText).length }}
     </div>
     <div v-for="game in filterBy(games, filterText)">
