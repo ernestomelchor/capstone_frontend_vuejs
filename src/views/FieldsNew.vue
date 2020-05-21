@@ -7,6 +7,7 @@
     />
     <div class="container">
       <h1>New Field</h1>
+      <h2 class="new-field-message">{{ message }}</h2>
       <form v-on:submit.prevent="submit()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -62,6 +63,7 @@ export default {
       open_time: "",
       close_time: "",
       image_url: "",
+      message: "",
       errors: [],
       status: ""
     };
@@ -88,6 +90,7 @@ export default {
           this.open_time = "";
           this.close_time = "";
           this.$refs.fileInput.value = "";
+          this.message = "New Field Added!";
         })
         .catch(error => {
           console.log("Fields create error", error.response);

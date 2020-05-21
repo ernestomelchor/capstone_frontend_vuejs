@@ -2378,6 +2378,17 @@ h2,
   font-size: 2rem;
 }
 
+h2.new-field-message {
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 2rem;
+  color: #ffe9c5;
+}
+
 h3,
 .h3 {
   font-size: 1.75rem;
