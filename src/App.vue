@@ -105,24 +105,28 @@
 
             <a
               class="btn btn-outline-light btn-social mx-1"
+              target="_blank"
               href="https://www.linkedin.com/in/ernestomelchor/"
             >
               <i class="fab fa-fw fa-linkedin-in"></i>
             </a>
             <a
               class="btn btn-outline-light btn-social mx-1"
+              target="_blank"
               href="https://github.com/ernestomelchor"
             >
               <i class="fab fa-fw fa-github"></i>
             </a>
             <a
               class="btn btn-outline-light btn-social mx-1"
+              target="_blank"
               href="https://twitter.com/ernestomelchor_"
             >
               <i class="fab fa-fw fa-twitter"></i>
             </a>
             <a
               class="btn btn-outline-light btn-social mx-1"
+              target="_blank"
               href="https://www.instagram.com/ernestomelchor88/"
             >
               <i class="fab fa-fw fa-instagram"></i>
@@ -134,7 +138,7 @@
             <p class="lead mb-0">
               When Ernesto is not playing soccer, he is playing around with Bootstrap themes!
               <br />
-              <a href="http://startbootstrap.com">Start Bootstrap</a>.
+              <a target="_blank" href="http://startbootstrap.com">Start Bootstrap</a>.
             </p>
           </div>
         </div>

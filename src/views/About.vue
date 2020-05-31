@@ -43,6 +43,7 @@
         <div class="text-center mt-4">
           <a
             class="btn btn-xl btn-outline-light"
+            target="_blank"
             href="https://github.com/ernestomelchor/capstone_frontend_vuejs"
           >
             <i class="fas fa-download mr-2"></i>Frontend Repo!
@@ -52,6 +53,7 @@
         <div class="text-center mt-4">
           <a
             class="btn btn-xl btn-outline-light"
+            target="_blank"
             href="https://github.com/ernestomelchor/capstone_backend"
           >
             <i class="fas fa-download mr-2"></i>Backend Repo!
