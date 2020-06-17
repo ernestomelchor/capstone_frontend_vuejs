@@ -131,6 +131,13 @@
             >
               <i class="fab fa-fw fa-instagram"></i>
             </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              target="_blank"
+              href="https://ernestomelchor.com/"
+            >
+              <i class="fab fa-fw fa-wordpress"></i>
+            </a>
           </div>
           <!-- Footer About Text-->
           <div class="col-lg-4">
