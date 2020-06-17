@@ -17,7 +17,7 @@
         <div class="row mb-4 text-white">
           <div class="col-lg-4 ml-auto">
             <p class="lead">
-              We at Soccer App are all about conecting you to soccer games in your area
+              We at Soccer App are all about conecting you to soccer games in your Chicago
               and making sure you have a good time. Check out all games, attend, or
               schedule your own!
             </p>

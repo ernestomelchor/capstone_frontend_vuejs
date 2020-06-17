@@ -147,7 +147,7 @@
     <!-- Copyright Section-->
     <section class="copyright py-4 text-center text-white">
       <div class="container">
-        <small>Copyright © Soccer App 2020</small>
+        <small>Copyright © SoccerApp 2020</small>
       </div>
     </section>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->

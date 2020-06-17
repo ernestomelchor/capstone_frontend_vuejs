@@ -31,7 +31,7 @@ export default {
   data: function() {
     return {
       message: "Soccer App!",
-      subTitle: "Welcome to the beautiful game"
+      subTitle: "Welcome to the beautiful game in Chicago"
     };
   },
   created: function() {},
