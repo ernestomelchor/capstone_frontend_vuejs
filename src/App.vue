@@ -143,9 +143,9 @@
           <div class="col-lg-4">
             <h4 class="text-uppercase mb-4">About Founder</h4>
             <p class="lead mb-0">
-              When Ernesto is not playing soccer, he is playing around with Bootstrap themes!
+              When Ernesto is not playing soccer, he is building projects!
               <br />
-              <a target="_blank" href="http://startbootstrap.com">Start Bootstrap</a>.
+              <a target="_blank" href="https://www.ernestomelchor.dev/">Ernesto's Portfolio Site</a>.
             </p>
           </div>
         </div>
