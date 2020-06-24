@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <h3 class="page-section-heading text-center text-uppercase mb-4">My Code!</h3>
+        <h3 class="page-section-heading text-center text-uppercase mb-4">My Code</h3>
         <!-- Icon Divider-->
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
@@ -46,7 +46,7 @@
             target="_blank"
             href="https://github.com/ernestomelchor/capstone_frontend_vuejs"
           >
-            <i class="fas fa-download mr-2"></i>Frontend Repo!
+            <i class="fas fa-download mr-2"></i>Frontend Repo
           </a>
         </div>
         <!-- About Section Button-->
@@ -56,7 +56,7 @@
             target="_blank"
             href="https://github.com/ernestomelchor/capstone_backend"
           >
-            <i class="fas fa-download mr-2"></i>Backend Repo!
+            <i class="fas fa-download mr-2"></i>Backend Repo
           </a>
         </div>
       </div>
