@@ -3,7 +3,7 @@
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Sign Up</h1>
-        <h5>Already have an account yet?</h5>
+        <h5>Already have an account?</h5>
         <h5>
           <a href="/login">Log in!</a>
         </h5>

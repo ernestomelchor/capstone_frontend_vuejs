@@ -25,6 +25,10 @@
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
+    <br />
+    <h3
+      class="masthead-subheading font-weight-light"
+    >Here for a demo? Login using email "{{ dummyEmail }}" and password "{{ dummyPassword }}".</h3>
   </div>
 </template>
 
@@ -36,7 +40,9 @@ export default {
     return {
       email: "",
       password: "",
-      errors: []
+      errors: [],
+      dummyEmail: "test@example.com",
+      dummyPassword: "test"
     };
   },
   methods: {
