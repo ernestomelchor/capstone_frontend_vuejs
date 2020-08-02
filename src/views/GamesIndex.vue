@@ -26,7 +26,7 @@
     <div v-if="jwt" id="map"></div>
     <br />
     <br />
-    <h3 v-if="jwt" class="mb-4 text-center">Current Weather in Chicago</h3>
+    <!-- <h3 v-if="jwt" class="mb-4 text-center">Current Weather in Chicago</h3>
     <div v-if="jwt" class="weather-widget text-center mb-4">
       <h5 class="text-white">Forecast:</h5>
       <p>{{ weather }}</p>
@@ -36,7 +36,7 @@
       <p>{{ feelsLike }}°F</p>
       <h5 class="text-white">Winds:</h5>
       <p>{{ windSpeed }}MPH</p>
-    </div>
+    </div>-->
     <div v-if="jwt" class="searchbar container-fluid mb-4">
       Search:
       <input
@@ -98,9 +98,9 @@ export default {
   mixins: [Vue2Filters.mixin],
   name: "Home",
   components: {
-    HelloWorld
+    HelloWorld,
   },
-  data: function() {
+  data: function () {
     return {
       message: "Come Join a Game!",
       weather: {},
@@ -111,52 +111,52 @@ export default {
       filterText: "",
       jwt: null,
       status: "",
-      errors: []
+      errors: [],
     };
   },
-  mounted: function() {
-    var AERISID = process.env.VUE_APP_AERISWEATHER_ID;
-    var AERISKEY = process.env.VUE_APP_AERISWEATHER_SECRET;
-    const url = `https://api.aerisapi.com/observations/:auto?&format=json&filter=allstations&limit=1&fields=loc,ob.tempF,ob.windSpeedMPH,ob.weather,ob.feelslikeF&client_id=${AERISID}&client_secret=${AERISKEY}`;
+  mounted: function () {
+    // var AERISID = process.env.VUE_APP_AERISWEATHER_ID;
+    // var AERISKEY = process.env.VUE_APP_AERISWEATHER_SECRET;
+    // const url = `https://api.aerisapi.com/observations/:auto?&format=json&filter=allstations&limit=1&fields=loc,ob.tempF,ob.windSpeedMPH,ob.weather,ob.feelslikeF&client_id=${AERISID}&client_secret=${AERISKEY}`;
 
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        if (!json.success) {
-          console.log("Oh no!");
-        } else {
-          console.log(json);
-          this.weather = json.response.ob.weather;
-          this.temperature = json.response.ob.tempF;
-          this.feelsLike = json.response.ob.feelslikeF;
-          this.windSpeed = json.response.ob.windSpeedMPH;
-        }
-      });
+    // fetch(url)
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(json => {
+    //     if (!json.success) {
+    //       console.log("Oh no!");
+    //     } else {
+    //       console.log(json);
+    //       this.weather = json.response.ob.weather;
+    //       this.temperature = json.response.ob.tempF;
+    //       this.feelsLike = json.response.ob.feelslikeF;
+    //       this.windSpeed = json.response.ob.windSpeedMPH;
+    //     }
+    //   });
     this.setJwt();
     axios
       .get("/api/games")
-      .then(response => {
+      .then((response) => {
         console.log("All Games:", response.data);
         this.games = response.data;
         this.setupMap();
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Games Index error", error.response);
         this.errors = error.response.data.errors;
         this.status = error.response.status;
       });
   },
   methods: {
-    setupMap: function() {
+    setupMap: function () {
       mapboxgl.accessToken = process.env.VUE_APP_SOCCER_API_KEY;
       var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
       var map = new mapboxgl.Map({
         container: "map", // container id
         style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
         center: [-87.6298, 41.8781], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        zoom: 9, // starting zoom
       });
       // disable map zoom when using scroll
       map.scrollZoom.disable();
@@ -166,28 +166,28 @@ export default {
       map.addControl(
         new mapboxgl.GeolocateControl({
           positionOptions: {
-            enableHighAccuracy: true
+            enableHighAccuracy: true,
           },
-          trackUserLocation: true
+          trackUserLocation: true,
         })
       );
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl());
       map.addControl(
         new MapboxDirections({
-          accessToken: mapboxgl.accessToken
+          accessToken: mapboxgl.accessToken,
         }),
         "top-left"
       );
-      this.games.forEach(game => {
+      this.games.forEach((game) => {
         mapboxClient.geocoding
           .forwardGeocode({
             query: game.field_address,
             autocomplete: false,
-            limit: 1
+            limit: 1,
           })
           .send()
-          .then(function(response) {
+          .then(function (response) {
             if (
               response &&
               response.body &&
@@ -211,40 +211,40 @@ export default {
           });
       });
     },
-    createPlayerGame: function(game) {
+    createPlayerGame: function (game) {
       var params = {
-        game_id: game.id
+        game_id: game.id,
       };
       axios
         .post("/api/player_games", params)
-        .then(response => {
+        .then((response) => {
           game.attending = true;
-          this.games.forEach(function(game) {
+          this.games.forEach(function (game) {
             if (game.id === params.game_id) {
               game.players_attending++;
             }
           });
         })
-        .catch(errors =>
+        .catch((errors) =>
           console.log("PlayerGames error", errors.response.data)
         );
     },
-    destroyPlayerGame: function(game) {
+    destroyPlayerGame: function (game) {
       var params = {
-        player_game_id: game.id
+        player_game_id: game.id,
       };
-      axios.delete("/api/player_games/" + game.id).then(response => {
+      axios.delete("/api/player_games/" + game.id).then((response) => {
         game.attending = false;
-        this.games.forEach(function(game) {
+        this.games.forEach(function (game) {
           if (game.id === params.game_id) {
             game.players_attending--;
           }
         });
       });
     },
-    setJwt: function() {
+    setJwt: function () {
       this.jwt = localStorage.jwt;
-    }
-  }
+    },
+  },
 };
 </script>
