@@ -36,36 +36,36 @@
 import axios from "axios";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       email: "",
       password: "",
       errors: [],
       dummyEmail: "test@example.com",
-      dummyPassword: "test"
+      dummyPassword: "passTheBall",
     };
   },
   methods: {
-    submit: function() {
+    submit: function () {
       var params = {
         email: this.email,
-        password: this.password
+        password: this.password,
       };
       axios
         .post("/api/sessions", params)
-        .then(response => {
+        .then((response) => {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/games");
           window.location.reload();
         })
-        .catch(error => {
+        .catch((error) => {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
         });
-    }
-  }
+    },
+  },
 };
 </script>
