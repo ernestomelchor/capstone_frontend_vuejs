@@ -19,10 +19,10 @@
         <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-4">{{ subTitle }}</p>
         <h3 class="masthead-subheading font-weight-light mb">
-          Here for a demo? Copy and paste "{{ dummyEmail }}" and enter password "{{ dummyPassword }}" at
+          Here for a demo? Login using email "{{ dummyEmail }}" and password "{{ dummyPassword }}"
           <a
             href="/login"
-          >login!</a>
+          >here!</a>
         </h3>
       </div>
     </header>
@@ -34,15 +34,15 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       message: "Soccer App!",
       subTitle: "Welcome to the beautiful game in Chicago",
       dummyEmail: "test@example.com",
-      dummyPassword: "passTheBall"
+      dummyPassword: "passTheBall",
     };
   },
-  created: function() {},
-  methods: {}
+  created: function () {},
+  methods: {},
 };
 </script>
