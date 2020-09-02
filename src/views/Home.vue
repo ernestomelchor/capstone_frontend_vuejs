@@ -39,7 +39,7 @@ export default {
       message: "Soccer App!",
       subTitle: "Welcome to the beautiful game in Chicago",
       dummyEmail: "test@example.com",
-      dummyPassword: "test"
+      dummyPassword: "passTheBall"
     };
   },
   created: function() {},
